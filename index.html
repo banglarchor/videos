@@ -3,38 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>Banglarchor Videos</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
+      padding: 20px;
     }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
     video {
-      margin: 15px 0;
+      display: block;
       width: 480px;
       max-width: 100%;
+      margin-bottom: 25px;
     }
   </style>
 </head>
 <body>
 
 <h1>🎬 My Video Website</h1>
+
 <div id="videoContainer"></div>
 
 <script>
-/* শুধু এখানে video file নাম add করবে */
-const videos = [
-  "1.mp4",
-  "2.mp4",
-  "3.mp4"
-];
+  // শুধু এখানে video file নাম add করবে
+  const videos = [
+    "1.mp4",
+    "2.mp4",
+    "3.mp4"
+  ];
 
-const container = document.getElementById("videoContainer");
+  const container = document.getElementById("videoContainer");
 
-videos.forEach(file => {
-  const video = document.createElement("video");
-  video.controls = true;
-  video.src = "videos/" + file;
-  container.appendChild(video);
-});
+  videos.forEach(file => {
+    const video = document.createElement("video");
+    video.controls = true;
+    video.src = "all-videos/" + file; // 👈 correct path
+    container.appendChild(video);
+  });
 </script>
 
 </body>
