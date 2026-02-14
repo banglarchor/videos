@@ -1,0 +1,116 @@
+:root {
+  --green-dark: #0b3d2e;
+  --green-mid: #0f9b6c;
+  --green-light: #38ef7d;
+  --card-bg: #0f2f25;
+  --text-main: #eafff6;
+  --text-muted: #a6d9c6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--green-dark), var(--green-light));
+  color: var(--text-main);
+}
+
+/* ===== HEADER ===== */
+header {
+  padding: 24px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+header h1 {
+  font-size: 2.2rem;
+}
+
+header p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* ===== MAIN GRID ===== */
+main {
+  max-width: 1400px;
+  margin: auto;
+  padding: 30px 20px 70px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 👈 4 videos per row */
+  gap: 22px;
+}
+
+/* ===== VIDEO CARD ===== */
+.video-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+}
+
+.video-card video {
+  width: 100%;
+  border-radius: 10px;
+  background: #000;
+}
+
+.video-title {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.85rem;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  color: var(--text-muted);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+}
