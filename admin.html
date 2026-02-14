@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Upload</title>
+</head>
+
+<!-- Firebase SDK (simple script version) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+
+<script>
+  // Firebase config (তুমি যেটা পেয়েছো)
+  const firebaseConfig = {
+    apiKey: "AIzaSyDqu7G4KZEnO7sloqmcOrZHAzVxAKslwA8",
+    authDomain: "video-storage-1dce6.firebaseapp.com",
+    projectId: "video-storage-1dce6",
+    storageBucket: "video-storage-1dce6.firebasestorage.app",
+    messagingSenderId: "1068825031790",
+    appId: "1:1068825031790:web:e41f81be131efccfa7227f"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const storage = firebase.storage();
+</script>
+
+
+
+<body>
+
+<h2>Admin Video Upload</h2>
+
+<input type="file" id="videoFile" accept="video/*">
+<br><br>
+<button onclick="uploadVideo()">Upload</button>
+
+<p id="status"></p>
+
+</body>
+</html>
