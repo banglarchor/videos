@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Banglarchor Videos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>🎬 Banglarchor Videos</h1>
-  <p>Modern • Clean • Green Theme</p>
+  <img src="logo.png" alt="Banglarchor Logo">
 </header>
 
 <main>
@@ -22,12 +21,10 @@
 </footer>
 
 <script>
-  // শুধু ভিডিও ফাইল নাম add করো
   const videos = [
     "1.mp4",
     "2.mp4",
-    "3.mp4",
-    "4.mp4"
+    "3.mp4"
   ];
 
   const grid = document.getElementById("videoGrid");
@@ -35,6 +32,9 @@
   videos.forEach((file, i) => {
     const card = document.createElement("div");
     card.className = "video-card";
+
+    const box = document.createElement("div");
+    box.className = "video-box";
 
     const video = document.createElement("video");
     video.src = "all-videos/" + file;
@@ -44,7 +44,8 @@
     title.className = "video-title";
     title.innerText = `Video ${i + 1}`;
 
-    card.appendChild(video);
+    box.appendChild(video);
+    card.appendChild(box);
     card.appendChild(title);
     grid.appendChild(card);
   });
